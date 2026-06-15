@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** [Md Azim Khan]  
 **Issue:** https://github.com/codeforpdx/tenantfirstaid/issues/267#issuecomment-4655274901 
-**Status:** Phase I Complete
+**Status:** Phase I and II Complete
 
 ---
 
@@ -62,7 +62,8 @@ is never audited on PRs — any performance or accessibility regression would go
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+The root cause is that no one has added a Lighthouse CI job to the 
+workflow yet. The frontend gets built but never audited for quality scores.
 
 ### Proposed Solution
 
