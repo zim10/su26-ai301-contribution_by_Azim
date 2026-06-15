@@ -39,19 +39,22 @@ What also drew me to this issue was the process of getting here. The issue start
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+- uv wasn't in PATH after install, had to run source $HOME/.local/bin/env
+- VS Code warning about python.terminal.useEnvFile
+- don't need Google Cloud credentials for this issue
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Open .github/workflows/pr-check.yml
+2. Look at all jobs — snapshot, backend-test, frontend-build
+3. Observed: no lighthouse job exists — frontend quality is never audited on PRs
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Commit showing reproduction:** https://github.com/zim10/tenantfirstaid/tree/fix-issue-267
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** The pr-check.yml workflow has no Lighthouse job. Frontend build quality 
+is never audited on PRs — any performance or accessibility regression would go undetected.
 
 ---
 
@@ -63,26 +66,29 @@ What also drew me to this issue was the process of getting here. The issue start
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+Add a lighthouse job to pr-check.yml that runs after frontend-build, 
+and create frontend/lighthouserc.json with the baseline thresholds 
+specified in the issue.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** Lighthouse CI job is missing from PR checks
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** frontend-build job is the pattern to follow; my job uses the same structure
 
-**Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+**Plan:** list your two files and what you added to each
+1. Add Upload build artifact step to frontend-build job in .github/workflows/pr-check.yml
+2. Add new lighthouse job to .github/workflows/pr-check.yml with needs: frontend-build
+3. Create frontend/lighthouserc.json with score thresholds from the issue
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** https://github.com/zim10/tenantfirstaid/tree/fix-issue-267
 
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
+**Review:** Yes — followed the PR template, checked Infrastructure type, linked Closes #267.
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** Push branch and open a PR — confirm the lighthouse job appears and runs 
+in the GitHub Actions tab after frontend-build completes.
 
 ---
 
