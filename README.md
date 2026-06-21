@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** [Md Azim Khan]  
 **Issue:** https://github.com/codeforpdx/tenantfirstaid/issues/267#issuecomment-4655274901 
-**Status:** Phase I and II Complete
+**Status:** Phase I, II, and III Complete
 
 ---
 
@@ -108,7 +108,7 @@ in the GitHub Actions tab after frontend-build completes.
 
 ### Manual Testing
 
-[What you tested manually and results]
+Pushed branch and opened PR. GitHub Actions ran the lighthouse job after frontend-build completed. Maintainer reviewed and approved. PR was merged into main.
 
 ---
 
@@ -116,7 +116,10 @@ in the GitHub Actions tab after frontend-build completes.
 
 ### Week [X] Progress
 
-[What you built this week, challenges faced, decisions made]
+- Added a lighthouse job to pr-check.yml that runs after frontend-build using needs: frontend-build. Added an upload artifact step to 
+frontend-build to pass the built files between jobs. 
+- Created frontend/lighthouserc.json with baseline score thresholds from the issue.
+- A CodeQL security warning flagged the unpinned @v12 tag — noted for a potential follow-up PR.
 
 ### Week [Y] Progress
 
@@ -124,23 +127,24 @@ in the GitHub Actions tab after frontend-build completes.
 
 ### Code Changes
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
+- **Files modified:** [.github/workflows/pr-check.yml, frontend/lighthouserc.json]
+- **Key commits:** [https://github.com/zim10/tenantfirstaid/tree/fix-issue-267]
 - **Approach decisions:** [Why you chose certain approaches]
 
 ---
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** https://github.com/codeforpdx/tenantfirstaid/pull/360 
+
 
 **PR Description:** [Draft or final PR description - much of the content above can be adapted]
 
 **Maintainer Feedback:**
-- [Date]: [Summary of feedback received]
-- [Date]: [How you addressed it]
+- [Date]: [CodeQL flagged unpinned treosh/lighthouse-ci-action@v12 tag]
+- [Date]: [Maintainer approved and merged — "This looks good, thanks for the workflow updates with Lighthouse!"]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** Merged
 
 ---
 
