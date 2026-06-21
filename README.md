@@ -155,7 +155,10 @@ frontend-build to pass the built files between jobs.
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+Each GitHub Actions job runs on a fresh machine, so the built files 
+from frontend-build are not available to the lighthouse job. Solved 
+this by uploading the dist folder as an artifact and downloading it 
+in the lighthouse job.
 
 ### What I'd Do Differently Next Time
 
