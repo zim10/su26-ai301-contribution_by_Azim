@@ -19,19 +19,19 @@ What also drew me to this issue was the process of getting here. The issue start
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+[No Lighthouse CI job exists in the PR workflow to audit frontend quality scores.]
 
 ### Expected Behavior
 
-[What should happen?]
+[Every PR should run a Lighthouse audit and fail if scores drop below the baseline thresholds.]
 
 ### Current Behavior
 
-[What actually happens?]
+[The frontend gets built but never audited — regressions in performance or accessibility go undetected.]
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+[`.github/workflows/pr-check.yml`]
 
 ---
 
@@ -53,8 +53,7 @@ What also drew me to this issue was the process of getting here. The issue start
 
 - **Commit showing reproduction:** https://github.com/zim10/tenantfirstaid/tree/fix-issue-267
 - **Screenshots/logs:** [If applicable]
-- **My findings:** The pr-check.yml workflow has no Lighthouse job. Frontend build quality 
-is never audited on PRs — any performance or accessibility regression would go undetected.
+- **My findings:** The pr-check.yml workflow has no Lighthouse job. Frontend build quality is never audited on PRs — any performance or accessibility regression would go undetected.
 
 ---
 
@@ -129,7 +128,7 @@ frontend-build to pass the built files between jobs.
 
 - **Files modified:** [.github/workflows/pr-check.yml, frontend/lighthouserc.json]
 - **Key commits:** [https://github.com/zim10/tenantfirstaid/tree/fix-issue-267]
-- **Approach decisions:** [Why you chose certain approaches]
+- **Approach decisions:** [Used needs: frontend-build to ensure the lighthouse job only runs after a successful build. Used artifact upload/download to share the built files between jobs since each job runs on a fresh machine.]
 
 ---
 
@@ -141,8 +140,8 @@ frontend-build to pass the built files between jobs.
 **PR Description:** [Draft or final PR description - much of the content above can be adapted]
 
 **Maintainer Feedback:**
-- [Date]: [CodeQL flagged unpinned treosh/lighthouse-ci-action@v12 tag]
-- [Date]: [Maintainer approved and merged — "This looks good, thanks for the workflow updates with Lighthouse!"]
+- [6/18/2026]: [CodeQL flagged unpinned treosh/lighthouse-ci-action@v12 tag]
+- [6/20/2026]: [Maintainer approved and merged — "This looks good, thanks for the workflow updates with Lighthouse!"]
 
 **Status:** Merged
 
