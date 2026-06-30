@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** [Md Azim Khan]  
 **Issue:** https://github.com/codeforpdx/tenantfirstaid/issues/267#issuecomment-4655274901 
-**Status:** Phase I, II, and III Complete
+**Status:** Merged (Phase IV Complete)
 
 ---
 
@@ -19,19 +19,19 @@ What also drew me to this issue was the process of getting here. The issue start
 
 ### Problem Description
 
-[No Lighthouse CI job exists in the PR workflow to audit frontend quality scores.]
+No Lighthouse CI job exists in the PR workflow to audit frontend quality scores.
 
 ### Expected Behavior
 
-[Every PR should run a Lighthouse audit and fail if scores drop below the baseline thresholds.]
+Every PR should run a Lighthouse audit and fail if scores drop below the baseline thresholds.
 
 ### Current Behavior
 
-[The frontend gets built but never audited — regressions in performance or accessibility go undetected.]
+The frontend gets built but never audited — regressions in performance or accessibility go undetected.
 
 ### Affected Components
 
-[`.github/workflows/pr-check.yml`]
+`.github/workflows/pr-check.yml`
 
 ---
 
@@ -52,7 +52,6 @@ What also drew me to this issue was the process of getting here. The issue start
 ### Reproduction Evidence
 
 - **Commit showing reproduction:** https://github.com/zim10/tenantfirstaid/tree/fix-issue-267
-- **Screenshots/logs:** [If applicable]
 - **My findings:** The pr-check.yml workflow has no Lighthouse job. Frontend build quality is never audited on PRs — any performance or accessibility regression would go undetected.
 
 ---
