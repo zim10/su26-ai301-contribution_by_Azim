@@ -135,6 +135,7 @@ The PR was reviewed and approved by the project maintainer, then merged into `co
 
 PR: [github.com/codeforpdx/tenantfirstaid/pull/360](https://github.com/codeforpdx/tenantfirstaid/pull/360)
 ![App Screenshot](merged_commit.png)
+![App Screenshot](merged.PNG)
 ---
 
 ## Resources Used
