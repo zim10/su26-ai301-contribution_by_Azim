@@ -134,7 +134,7 @@ Files changed:
 The PR was reviewed and approved by the project maintainer, then merged into `codeforpdx/tenantfirstaid` `main` on 2026-06-20.
 
 PR: [github.com/codeforpdx/tenantfirstaid/pull/360](https://github.com/codeforpdx/tenantfirstaid/pull/360)
-
+![App Screenshot](merged_commit.png)
 ---
 
 ## Resources Used
