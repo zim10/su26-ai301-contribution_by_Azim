@@ -1,8 +1,8 @@
 # Open Source Contribution Log
 
-**Contributor:** Md Azim Khan
-**Program:** CodePath AI301
-**Status:** Phase IV Complete
+**Contributor:** Md Azim Khan  
+**Program:** CodePath AI301  
+**Status:** Phase IV Complete  
 
 ---
 
